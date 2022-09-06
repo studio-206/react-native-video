@@ -121,6 +121,7 @@ public final class ExoPlayerView extends FrameLayout {
             }
         } else {
             view = new TextureView(context);
+            ((TextureView) view).setOpaque(false);
         }
         view.setLayoutParams(layoutParams);
 
