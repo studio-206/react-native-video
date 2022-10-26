@@ -1,7 +1,22 @@
 ## Changelog
 
+### Version 6.0.0-alpha.4
+
+- ensure src is always provided to native player even if it is invalid [#2857](https://github.com/react-native-video/react-native-video/pull/2857)
+- Sample: Add react-native-video controls support [#2852](https://github.com/react-native-video/react-native-video/pull/2852)
+- Android: Switch Google's maven repository to default `google()` [#2860](https://github.com/react-native-video/react-native-video/pull/2860)
+- Android: Implement focusable prop so the video view can toggle whether it is focusable for non-touch devices [#2819](https://github.com/react-native-video/react-native-video/issues/2819)
+- Android: fix linter warning [#2891] (https://github.com/react-native-video/react-native-video/pull/2891)
+- Fix iOS RCTSwiftLog naming collision [#2868](https://github.com/react-native-video/react-native-video/issues/2868)
+- Added "homepage" to package.json [#2882](https://github.com/react-native-video/react-native-video/pull/2882)
+
+### Version 6.0.0-alpha.3
+
+- Fix ios build [#2854](https://github.com/react-native-video/react-native-video/pull/2854)
+
 ### Version 6.0.0-alpha.2
 
+- Upgrade ExoPlayer to 2.18.1 [#2846](https://github.com/react-native-video/react-native-video/pull/2846)
 - Feature add new APIs to query supported features of device decoder (widevine level & codec capabilities) on android [#2740](https://github.com/react-native-video/react-native-video/pull/2740)
 - Feature add support of subtitle styling on android [#2759](https://github.com/react-native-video/react-native-video/pull/2759)
 - Fix Android #2690 ensure onEnd is not sent twice [#2690](https://github.com/react-native-video/react-native-video/issues/2690)
@@ -11,6 +26,7 @@
 - Fixed crash when iOS seek method called reject on the promise [#2743](https://github.com/react-native-video/react-native-video/pull/2743)
 - Fix maxBitRate property being ignored on Android [#2670](https://github.com/react-native-video/react-native-video/pull/2670)
 - Fix crash when the source is a cameraroll [#2639] (https://github.com/react-native-video/react-native-video/pull/2639)
+- Fix IOS UI frame drop on loading video [#2848] (https://github.com/react-native-video/react-native-video/pull/2848)
 
 ### Version 6.0.0-alpha.1
 
@@ -23,6 +39,7 @@
 - Fix video endless loop when repeat set to false or not specified. [#2329](https://github.com/react-native-video/react-native-video/pull/2329)
 
 ### Version 6.0.0-alpha.0
+
 - Support disabling buffering [#2689](https://github.com/react-native-video/react-native-video/pull/2689)
 - Fix AudioFocus bug that could cause the player to stop responding to play/pause in some instances. [#2689](https://github.com/react-native-video/react-native-video/pull/2689)
 - Fix player crashing when it is being cleared. [#2689](https://github.com/react-native-video/react-native-video/pull/2689)
