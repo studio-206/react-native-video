@@ -108,8 +108,8 @@ class VideoPlayer extends Component {
 
   onLoad = (data: any) => {
     this.setState({ duration: data.duration, loading: false, });
-    this.onAudioTracks(data.audioTracks)
-    this.onTextTracks(data.textTracks)
+    this.onAudioTracks(data)
+    this.onTextTracks(data)
   };
 
   onProgress = (data: any) => {
@@ -132,7 +132,7 @@ class VideoPlayer extends Component {
       return x.selected
     })
     this.setState({
-      audioTracks: data,
+      audioTracks: data.audioTracks,
     })
     if (selectedTrack?.language) {
       this.setState({
@@ -151,7 +151,7 @@ class VideoPlayer extends Component {
     })
 
     this.setState({
-      textTracks: data,
+      textTracks: data.textTracks,
     })
     if (selectedTrack?.language) {
       this.setState({
@@ -683,7 +683,6 @@ class VideoPlayer extends Component {
                     }}
                   >
                     <Picker.Item label={'none'} value={'none'} key={'none'} />
-
                     {this.state.textTracks.map((track) => (
                       <Picker.Item
                         label={track.language}
@@ -715,9 +714,12 @@ class VideoPlayer extends Component {
           paused={this.state.paused}
           volume={this.state.volume}
           muted={this.state.muted}
+          fullscreen={this.state.fullscreen}
           controls={this.state.showRNVControls}
           resizeMode={this.state.resizeMode}
           onLoad={this.onLoad}
+          onAudioTracks={this.onAudioTracks}
+          onTextTracks={this.onTextTracks}
           onProgress={this.onProgress}
           onEnd={this.onEnd}
           progressUpdateInterval={1000}
@@ -731,6 +733,7 @@ class VideoPlayer extends Component {
           repeat={this.state.loop}
           selectedTextTrack={this.state.selectedTextTrack}
           selectedAudioTrack={this.state.selectedAudioTrack}
+          playInBackground={false}
         />
       </TouchableOpacity>
     )
